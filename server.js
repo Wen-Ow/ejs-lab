@@ -66,9 +66,12 @@ const RESTAURANT = {
   ],
 };
 
-
 app.get("/", (req, res) => {
   res.render("home", { restaurant: RESTAURANT }); // Pass RESTAURANT data
+});
+
+app.get("/menu", (req, res) => {
+    res.render("menu", { menu: RESTAURANT.menu }); // Pass the menu array data
 });
 
 app.listen(3000, () => {
