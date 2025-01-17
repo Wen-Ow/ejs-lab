@@ -66,16 +66,29 @@ const RESTAURANT = {
   ],
 };
 
+// Home Route
 app.get("/", (req, res) => {
   res.render("home", { restaurant: RESTAURANT }); // Pass RESTAURANT data
 });
 
+// Menu Route
 app.get("/menu", (req, res) => {
-    res.render("menu", { menu: RESTAURANT.menu }); // Pass the menu array data
+  res.render("menu", { menu: RESTAURANT.menu }); // Pass the menu array data
+});
+
+// Category Route
+app.get("/menu/:category", (req, res) => {
+  const category = req.params.category.toLowerCase(); // Get category from the route parameter
+  const menuItems = RESTAURANT.menu.filter(
+    (item) => item.category === category
+  ); // Filter menu items by category
+
+  const formattedCategory =
+    category.charAt(0).toUpperCase() + category.slice(1); // Capitalize the first letter of the category for a better UI experience
+
+  res.render("category", { category, formattedCategory, menuItems }); // Render the category.ejs view and pass the filtered items and formatted category name
 });
 
 app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+  console.log("Server running on http://localhost:3000");
 });
-
-
