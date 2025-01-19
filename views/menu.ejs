@@ -16,7 +16,10 @@
     <ul>
       <% menu.forEach(item => { %> <% if (item.category === "mains") { %>
       <li>
-        <h3><%= item.name %></h3>
+        <h3>
+        <%= item.name %>
+        <% if (item.rating === 5) { %> ⭐ <% } %>
+        </h3>
         <p>Price: $<%= item.price.toFixed(2) %></p>
         <p>Rating: <%= item.rating %>/5</p>
         <p>Details: <%= item.details %></p>
@@ -30,7 +33,10 @@
     <ul>
       <% menu.forEach(item => { %> <% if (item.category === "desserts") { %>
       <li>
-        <h3><%= item.name %></h3>
+        <h3>
+        <%= item.name %>
+        <% if (item.rating === 5) { %> ⭐ <% } %>
+        </h3>
         <p>Price: $<%= item.price.toFixed(2) %></p>
         <p>Rating: <%= item.rating %>/5</p>
         <p>Details: <%= item.details %></p>
@@ -44,7 +50,10 @@
     <ul>
       <% menu.forEach(item => { %> <% if (item.category === "sides") { %>
       <li>
-        <h3><%= item.name %></h3>
+        <h3>
+        <%= item.name %>
+        <% if (item.rating === 5) { %> ⭐ <% } %>
+        </h3>
         <p>Price: $<%= item.price.toFixed(2) %></p>
         <p>Rating: <%= item.rating %>/5</p>
         <p>Details: <%= item.details %></p>

@@ -68,7 +68,7 @@ const RESTAURANT = {
 
 // Home Route
 app.get("/", (req, res) => {
-  res.render("home", { restaurant: RESTAURANT }); // Pass RESTAURANT data
+  res.render("home", { restaurant: RESTAURANT }); // Pass the RESTAURANT data
 });
 
 // Menu Route
